@@ -1,0 +1,50 @@
+{% extends 'global/base.html' %}
+
+
+
+{% block formulario %}
+{% comment %} table-bordered table-striped {% endcomment %}
+
+<div class="container-fluid">
+  <h1 class='mt-2'> |Nossos Funcionários| </h1>
+    <table class="table table-dark table-striped mt-3"> 
+        <tr>
+            <th colspan="2">Tema</th>
+        </tr>
+        {% for artigo in fotos %}
+        <tr>
+            <td><img src="{{ artigo.foto.url }}" class="img-fluid" width="170"></td>
+
+            <td>{{artigo.tema}}</td>
+
+
+        </tr>
+        {% endfor %}
+    </table>
+
+
+</div>
+
+
+<!-- Modal para exibir a descrição -->
+{% for artigo in artigos %}
+<!-- Modal -->
+<div class="modal fade" id="descricaoModal{{ artigo.id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">{{ artigo.tema }}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            {{ artigo.conteudo }}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+{% endblock formulario %}

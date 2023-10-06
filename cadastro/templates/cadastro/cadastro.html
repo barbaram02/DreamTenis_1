@@ -1,0 +1,35 @@
+{% extends 'global/base.html' %}
+
+{% block formulario %}
+<div class="container-fluid imgfundo">
+    <br>
+    <h1 class="cadastro_css">Cadastrar Novo Funcionário<h1>
+    <!--<h1 style="text-align: center;">Cadastrar Novo Funcionário<h1>-->
+    <form action="{% url 'gravar' %}" class="formulario_css" method="post">
+        {% csrf_token %}
+        <label class="label_one" for="nome" > Nome Completo </label>  
+        <input type="text" name="nome" value="{{nome}}" class="input-formulario {% if nome_error %} is-invalid {% endif %}" id="nome">
+        <label class="label_one" for="nascimento"> Data de Nascimento </label>
+        <input type="date" name="nascimento" value="{{nascimento}}" class="input-formulario {% if nascimento_error %} is-invalid {% endif %}" id="nascimento">
+        <label class="label_one" for="cpf"> CPF </label>
+        <input type="text" name="cpf"  value="{{cpf}}" class="input-formulario {% if cpf_error %} is-invalid {% endif %}" id="cpf">
+        <label class="label_one" for="email"> Email </label>
+        <input type="email" name="email" value="{{email}}"class="input-formulario {% if email_error %} is-invalid {% endif %}" id="email">
+        <label class="label_one" for="funcao"> Função </label>
+        <input type="text" name="funcao"  value="{{funcao}}" class="input-formulario {% if funcao_error %} is-invalid {% endif %}" id="funcao">
+        <label  class="label_one" for="numero"> Número de Celular</label>
+        <input type="numero" name="numero"  value="{{numero}}" class="input-formulario {% if numero_error %} is-invalid {% endif %}" id="numero">
+        <label  class="label_one" for="unidade"> Unidade </label>
+        <input type="text" name="unidade"  value="{{unidade}}" class="input-formulario {% if unidade_error %} is-invalid {% endif %}" id="unidade">
+        <br>
+        {% if msg_error %}
+        <div class="alert alert-danger" role="alert">
+            {{msg_error}}
+        </div>
+        {% endif %}
+        <button class="btn btn-light">Enviar</button>
+    </form>
+    <br>
+</div>
+
+{% endblock formulario %}

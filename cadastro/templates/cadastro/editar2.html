@@ -1,0 +1,27 @@
+{% extends 'global/base.html' %}
+
+{% block formulario %}
+<div class="container bg-success">
+    <br>
+    <h1>Atualizar Dados <h1>
+    <form action="{% url 'atualizar2' pessoa.id_pessoa %}" class="form-control bg-dark-subtle" method="post">
+        {% csrf_token %}
+        <label for="nome"> Nome Completo </label>
+        <input type="text" name="nome" value={{pessoa.nome}} class="form-control">
+        <label for="nascimento"> Data de Nascimento </label>
+        <input type="text" name="nascimento" value={{pessoa.nascimento}} class="form-control">
+        <label for="cpf"> CPF </label>
+        <input type="text" name="cpf" value={{pessoa.cpf}} class="form-control">
+        <label for="email"> Email </label>
+        <input type="text" name="email" value={{pessoa.email}} class="form-control">
+        <label for="funcao"> Função </label>
+        <input type="text" name="funcao" value={{pessoa.funcao}} class="form-control">
+        <label for="numero"> Número de Celular</label>
+        <input type="text" name="numero" value={{pessoa.funcao}} class="form-control">
+        <label for="unidade"> Unidade </label>
+        <input type="text" name="unidade" value={{pessoa.unidade}} class="form-control">
+        <br>
+        <button class="btn btn-light">Enviar</button>
+    </form>
+    <br>
+{% endblock formulario %}

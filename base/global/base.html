@@ -1,0 +1,19 @@
+{% include 'global/partials/head.html'  %}
+{% include 'global/partials/menu.html'  %}
+
+<article class = 'bg-black text-white'>  <!--Será usado no home e no contato-->
+    {% block texto %}{% endblock texto %}
+  </article> 
+
+ <article>
+  
+        {% block info %} {% endblock info %} 
+  
+ </article>
+ 
+ <article class="index"> 
+    {% block formulario %}{% endblock formulario %}
+  </article>
+ 
+</body>
+</html>

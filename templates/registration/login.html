@@ -1,0 +1,47 @@
+
+{% extends 'global/base.html' %}
+
+
+{% block info %}
+
+
+  {% if form.errors %}
+    <p>Seu nome de usuário e senha não correspondem. Por favor, tente novamente.</p>
+  {% endif %}
+
+
+  {% if next %}
+    {% if user.is_authenticated %}
+      <p>Sua conta não tem acesso a esta página. Para prosseguir,
+        faça login com uma conta que tenha acesso.</p>
+    {% else %}
+      <p class='letra'> !! Faça login para ver esta página !! </p>
+    {% endif %}
+  {% endif %}
+
+  <form method="post" action="{% url 'login' %}" class="tabela tabela_form" >
+    {% csrf_token %}
+    <table>
+      <br>
+      <tr>
+        <td>{{ form.username.label_tag }}</td>
+        <td>{{ form.username }}</td>
+      </tr>
+      <tr>
+        <td>{{ form.password.label_tag }}</td>
+        <td>{{ form.password }}</td>
+      </tr>
+    </table>
+    <br>
+    <input class="input-formulario" type="submit" value="login" />
+    <input class="input-formulario" type="hidden" name="next" value="{{ next }}" />
+
+
+    {# Supõe que você configure a visualização password_reset em seu URLconf #}
+    <p><a href="{% url 'password_reset' %}">Esqueceu a senha?</a></p>
+   
+  </form>
+
+
+ 
+{% endblock info %}

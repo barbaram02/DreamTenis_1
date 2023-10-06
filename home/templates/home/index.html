@@ -1,0 +1,25 @@
+{% extends 'global/base.html' %}
+
+
+{% block formulario %}
+
+<h1 class="mt-3"> >> |Bem-Vindo ao nosso Administrador Interno| << </h1>
+<div class="container-fluid  mt-4">
+    <div class='row'>
+{%for foto in fotos %}
+   
+     
+            
+        
+        
+            
+     <img class= 'foto' src='{{foto.foto.url}}' width='200'>
+     
+     
+     
+            
+    
+    {% endfor %}
+    </div>
+</div>
+{% endblock formulario %}

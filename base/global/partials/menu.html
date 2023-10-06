@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg bg-success text-white">
+        <div class="container-fluid">
+          <a class="navbar-brand">
+            <img src="/static/global/img/LogoSample.png">
+        </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'principal'%}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'funcionarios' %}">Funcionários</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'unidades' %}">Unidades</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'mostrar2' %}" >Mostrar</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Localizar
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'localizar' %}">Funcionários</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'cadastro'%}">Cadastrar</a>
+              </li>
+            </ul>
+            {% if user.is_authenticated %}
+        <div class="nav-item" style="color: black;">
+         <a class="nav-link active" aria-current="page" href="{% url 'logout'%}?next={{request.path}}">Usuário: {{ user.get_username }} | Logout</a>
+        </div>
+       {% else %}
+       <div class="container nav-item img_login">
+        <a class="nav-link img_login" aria-disabled="true" href="{% url 'login'%}"><img src="/static/global/img/pngtree-user-login-or-authenticate-icon-on-gray-background-flat-icon-ve-png-image_1742031-removebg-preview.png" width="100">
+        </a>
+       </div>
+       {% endif %}
+
+            <!-- <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-dark" type="submit">Search</button>
+            </form> -->
+             <!-- termino de lista -->
+          </div>
+        </div>
+      </nav>

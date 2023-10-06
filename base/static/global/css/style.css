@@ -1,0 +1,153 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@20&display=swap');
+
+*{
+  /*margin: 0;
+  padding: 0;
+  border: 0;*/
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+nav{
+  width: 100%;    
+  /*height: 15vh;*/
+  padding-top: 20px;
+}
+
+
+/*.navbar{
+  width: 100%;
+  }*/
+
+.navbar-nav li:hover{
+  background-color: rgb(76, 109, 93);
+  }
+
+.cadastro_css{
+ text-align: center;
+ color: rgb(255, 255, 255);
+}
+
+.imgfundo{
+  /*background-color:rgb(32, 32, 32);*/
+  background-image: url("/static/global/img/concepcao-abstrata-de-tecnologia-de-fundo-do-sistema-de-seguranca_43605-2346.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.tamanho{
+  width: auto;
+  height: auto;
+  }
+
+.formulario_css{
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items:baseline;
+
+}
+
+.formulario-css{
+  background-color:rgb(116, 115, 115);
+  display: flex;
+  flex-direction: column;
+  align-items:baseline;
+
+
+}
+
+.label_one{
+  display: flex;
+  flex-direction:column;
+  font-size: 25px;
+  font-family: "Space Grotesk", sans-serif;
+  color: rgb(240, 240, 240);
+  
+}
+
+
+.input-formulario{
+  background-color: rgb(144, 161, 144);
+  width: 380px;
+  height: 40px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 0px;
+  font-size: 20px;
+}
+
+.alert{
+  font-size: medium;
+
+}
+
+/* .galeria_foto{
+  display: flex;
+  width: 80%;
+  height: 750%;
+} */
+
+.img_login{
+  width: 10px;
+}
+
+.foto{
+
+  aspect-ratio: 9/16;
+  min-width: 0;
+  flex: 1 1 10px;
+  object-fit: cover;
+  opacity: .5;
+  transition: .5s;
+}
+
+.foto:hover{
+  flex: 1 1 100px;
+  opacity: 1;
+}
+
+.index{
+  background-color: darkolivegreen;
+}
+
+body{
+  background-color: darkolivegreen;
+}
+h1{
+text-align: center;
+font-family:  prompt;
+ }
+
+ .letra{
+  text-align: center;
+  font-family:  prompt;
+  font-size:xx-large;
+ }
+
+ .tabela{
+  background-color: rgb(104, 100, 100);
+  align-items: center;
+ }
+
+ .tabela_form{
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction:column;
+  font-size: 25px;
+
+ }
+
+label{
+  display: flex;
+  flex-direction:column;
+  font-size: 25px;
+  font-family: "BebasNeue&family", sans-serif;
+  color: rgb(22, 19, 19);
+
+}

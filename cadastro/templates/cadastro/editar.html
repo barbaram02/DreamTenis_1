@@ -1,0 +1,27 @@
+{% extends 'global/base.html' %}
+
+{% block formulario %}
+<div class="container bg-success">
+    <br>
+    <h1>Cadastrar Novo Funcionário <h1>
+    <form action="{% url 'atualizar' pessoa.id_pessoa %}" class="form-control bg-dark-subtle" method="post">
+        {% csrf_token %}
+        <label for="nome"> Nome Completo </label>
+        <input type="text" name="nome" class="form-control">
+        <label for="nascimento"> Data de Nascimento </label>
+        <input type="text" name="nascimento" class="form-control">
+        <label for="cpf"> CPF </label>
+        <input type="text" name="cpf" class="form-control">
+        <label for="email"> Email </label>
+        <input type="text" name="email" class="form-control">
+        <label for="funcao"> Função </label>
+        <input type="text" name="funcao" class="form-control">
+        <label for="numero"> Número de Celular</label>
+        <input type="text" name="numero" class="form-control">
+        <label for="unidade"> Unidade </label>
+        <input type="text" name="unidade" class="form-control">
+        <br>
+        <button class="btn btn-light">Enviar</button>
+    </form>
+    <br>
+{% endblock formulario %}
